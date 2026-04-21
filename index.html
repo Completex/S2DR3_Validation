@@ -14,7 +14,6 @@ body {
   color: #e5e7eb;
 }
 
-/* HEADER */
 .header {
   padding: 15px;
   background: #111827;
@@ -29,7 +28,7 @@ select {
   border: none;
 }
 
-/* GRID PRINCIPAL */
+/* GRID */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -37,7 +36,7 @@ select {
   padding: 10px;
 }
 
-/* TARJETAS */
+/* CARDS */
 .card {
   background: #111827;
   border-radius: 12px;
@@ -126,104 +125,111 @@ td, th {
 
 <script>
 
-const catalogo = __CATALOGO__;
+let catalogo;
 
-// MAPA
-const map = L.map('map').setView([-35, -71], 5);
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
-catalogo.imagenes.forEach(img => {
-  let marker = L.marker([img.lat, img.lon]).addTo(map);
-  marker.bindPopup(img.nombre);
-
-  marker.on("click", () => {
-    document.getElementById("imagen").value = img.id;
-    cargarBandas();
-    update();
-    map.setView([img.lat, img.lon], 12);
+// 🔥 CARGAR JSON
+fetch("catalogo_final.json")
+  .then(r => r.json())
+  .then(data => {
+    catalogo = data;
+    init();
   });
-});
 
-// SELECTORES
-const selImg = document.getElementById("imagen");
+// 🔥 INICIALIZAR TODO
+function init() {
 
-catalogo.imagenes.forEach(i => {
-  let o = document.createElement("option");
-  o.value = i.id;
-  o.text = i.nombre;
-  selImg.appendChild(o);
-});
+  const map = L.map('map').setView([-35, -71], 5);
 
-function cargarBandas() {
-  const id = selImg.value;
-  const tipo = document.getElementById("tipo").value;
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-  const img = catalogo.imagenes.find(i => i.id == id);
-  const bandas = Object.keys(img[tipo].bandas);
+  const selImg = document.getElementById("imagen");
 
-  const sel = document.getElementById("banda");
-  sel.innerHTML = "";
+  catalogo.imagenes.forEach(img => {
+    let marker = L.marker([img.lat, img.lon]).addTo(map);
+    marker.bindPopup(img.nombre);
 
-  bandas.forEach(b => {
-    let o = document.createElement("option");
-    o.value = b;
-    o.text = b;
-    sel.appendChild(o);
-  });
-}
-
-selImg.onchange = () => { cargarBandas(); update(); };
-document.getElementById("tipo").onchange = () => { cargarBandas(); update(); };
-document.getElementById("banda").onchange = update;
-
-// TABLA
-function cargarTabla(url, banda) {
-  fetch(url)
-    .then(r => r.text())
-    .then(text => {
-      let rows = text.split("\n").map(r => r.split(","));
-
-      let html = "<table>";
-
-      rows.forEach((row, i) => {
-        if (i === 0 || row[0] === banda) {
-          html += "<tr>";
-          row.forEach(cell => {
-            html += i === 0 ? "<th>"+cell+"</th>" : "<td>"+cell+"</td>";
-          });
-          html += "</tr>";
-        }
-      });
-
-      html += "</table>";
-
-      document.getElementById("tabla").innerHTML = html;
+    marker.on("click", () => {
+      selImg.value = img.id;
+      cargarBandas();
+      update();
+      map.setView([img.lat, img.lon], 12);
     });
+
+    let o = document.createElement("option");
+    o.value = img.id;
+    o.text = img.nombre;
+    selImg.appendChild(o);
+  });
+
+  function cargarBandas() {
+    const id = selImg.value;
+    const tipo = document.getElementById("tipo").value;
+
+    const img = catalogo.imagenes.find(i => i.id == id);
+    const bandas = Object.keys(img[tipo].bandas);
+
+    const sel = document.getElementById("banda");
+    sel.innerHTML = "";
+
+    bandas.forEach(b => {
+      let o = document.createElement("option");
+      o.value = b;
+      o.text = b;
+      sel.appendChild(o);
+    });
+  }
+
+  function cargarTabla(url, banda) {
+    fetch(url)
+      .then(r => r.text())
+      .then(text => {
+        let rows = text.split("\n").map(r => r.split(","));
+
+        let html = "<table>";
+
+        rows.forEach((row, i) => {
+          if (i === 0 || row[0] === banda) {
+            html += "<tr>";
+            row.forEach(cell => {
+              html += i === 0 ? "<th>"+cell+"</th>" : "<td>"+cell+"</td>";
+            });
+            html += "</tr>";
+          }
+        });
+
+        html += "</table>";
+
+        document.getElementById("tabla").innerHTML = html;
+      });
+  }
+
+  function update() {
+    const id = selImg.value;
+    const tipo = document.getElementById("tipo").value;
+    const banda = document.getElementById("banda").value;
+
+    const img = catalogo.imagenes.find(i => i.id == id);
+
+    document.getElementById("ref").src = img.ref;
+
+    const datos = img[tipo].bandas[banda] || {};
+
+    document.getElementById("hex").src = datos.hex || "";
+    document.getElementById("error").src = datos.error || "";
+    document.getElementById("plot").src = datos["3d"] || "";
+
+    cargarTabla(img[tipo].excel, banda);
+  }
+
+  // EVENTOS
+  selImg.onchange = () => { cargarBandas(); update(); };
+  document.getElementById("tipo").onchange = () => { cargarBandas(); update(); };
+  document.getElementById("banda").onchange = update;
+
+  // INIT
+  cargarBandas();
+  update();
 }
-
-// UPDATE
-function update() {
-  const id = selImg.value;
-  const tipo = document.getElementById("tipo").value;
-  const banda = document.getElementById("banda").value;
-
-  const img = catalogo.imagenes.find(i => i.id == id);
-
-  document.getElementById("ref").src = img.ref;
-
-  const datos = img[tipo].bandas[banda];
-
-  document.getElementById("hex").src = datos?.hex || "";
-  document.getElementById("error").src = datos?.error || "";
-  document.getElementById("plot").src = datos?.["3d"] || "";
-
-  cargarTabla(img[tipo].excel, banda);
-}
-
-// INIT
-cargarBandas();
-update();
 
 </script>
 
