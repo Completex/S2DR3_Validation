@@ -10,13 +10,13 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0b1120;
-  color: #e5e7eb;
+  background: #ffffff;
+  color: #111827;
 }
 
 .header {
   padding: 15px;
-  background: #111827;
+  background: #e5e7eb;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -25,7 +25,7 @@ body {
 select {
   padding: 5px;
   border-radius: 6px;
-  border: none;
+  border: 1px solid #ccc;
 }
 
 /* GRID */
@@ -38,10 +38,10 @@ select {
 
 /* CARDS */
 .card {
-  background: #111827;
+  background: #f3f4f6;
   border-radius: 12px;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
 /* MAPA */
@@ -71,6 +71,10 @@ select {
   border-radius: 10px;
 }
 
+iframe {
+  border: none;
+}
+
 /* TABLA */
 #tabla {
   margin: 10px;
@@ -84,7 +88,7 @@ table {
 }
 
 td, th {
-  border: 1px solid #374151;
+  border: 1px solid #d1d5db;
   padding: 5px;
 }
 </style>
@@ -126,6 +130,7 @@ td, th {
 <script>
 
 let catalogo;
+let map;
 
 // 🔥 CARGAR JSON
 fetch("catalogo_final.json")
@@ -138,13 +143,14 @@ fetch("catalogo_final.json")
 // 🔥 INICIALIZAR TODO
 function init() {
 
-  const map = L.map('map').setView([-35, -71], 5);
+  map = L.map('map').setView([-35, -71], 5);
 
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
   const selImg = document.getElementById("imagen");
 
   catalogo.imagenes.forEach(img => {
+
     let marker = L.marker([img.lat, img.lon]).addTo(map);
     marker.bindPopup(img.nombre);
 
@@ -210,13 +216,22 @@ function init() {
 
     const img = catalogo.imagenes.find(i => i.id == id);
 
+    // 🔥 MOVER MAPA AUTOMATICAMENTE
+    map.setView([img.lat, img.lon], 12);
+
     document.getElementById("ref").src = img.ref;
 
     const datos = img[tipo].bandas[banda] || {};
 
     document.getElementById("hex").src = datos.hex || "";
     document.getElementById("error").src = datos.error || "";
-    document.getElementById("plot").src = datos["3d"] || "";
+
+    // 🔥 FIX IFRAME 3D
+    const iframe = document.getElementById("plot");
+    iframe.src = "";
+    setTimeout(() => {
+      iframe.src = datos["3d"] || "";
+    }, 50);
 
     cargarTabla(img[tipo].excel, banda);
   }
