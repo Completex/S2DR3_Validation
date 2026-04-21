@@ -15,44 +15,57 @@ body {
 }
 
 .header {
-  padding: 15px;
-  background: #e5e7eb;
+  padding: 10px;
+  background: #f3f4f6;
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
+select {
+  padding: 5px;
+  border-radius: 6px;
+}
+
+/* GRID SUPERIOR */
 .top {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr 1fr;
   gap: 10px;
   padding: 10px;
 }
 
+/* CARDS */
 .card {
-  background: #f3f4f6;
+  background: #f9fafb;
   border-radius: 12px;
   padding: 10px;
 }
 
-#map { height: 300px; }
+/* MAPA */
+#map {
+  height: 300px;
+}
 
+/* IMAGEN REF */
 #ref {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
+/* STATS */
 #stats_img {
   width: 100%;
-  height: 240px;
+  height: 260px;
   object-fit: contain;
 }
 
 /* GRAFICOS */
 .graficos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
   padding: 10px;
 }
@@ -60,12 +73,25 @@ body {
 .graficos img, iframe {
   width: 100%;
   height: 250px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-iframe {
-  border: none;
-  overflow: hidden;
+/* TABLA */
+#tabla {
+  margin: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 5px;
 }
 
 /* MODAL CLARO */
@@ -73,20 +99,21 @@ iframe {
   display: none;
   position: fixed;
   z-index: 999;
-  padding-top: 40px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255,255,255,0.95);
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.95);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
 }
 
 .modal img, .modal iframe {
-  margin: auto;
-  display: block;
-  width: 80%;
-  height: 80%;
-  background: white;
+  width: 100%;
+  height: 100%;
 }
 </style>
 </head>
@@ -106,11 +133,9 @@ iframe {
   <select id="banda"></select>
 </div>
 
+<!-- TOP -->
 <div class="top">
-
-  <div class="card">
-    <div id="map"></div>
-  </div>
+  <div class="card"><div id="map"></div></div>
 
   <div class="card">
     <img id="ref">
@@ -118,7 +143,6 @@ iframe {
 
   <div class="card">
     <h4>Resultados Generales</h4>
-
     <select id="stat_type">
       <option value="R">R</option>
       <option value="R2">R2</option>
@@ -126,47 +150,59 @@ iframe {
       <option value="MAE">MAE</option>
       <option value="umbral">Umbral</option>
     </select>
-
     <img id="stats_img">
   </div>
-
 </div>
 
+<!-- GRAFICOS -->
 <div class="graficos">
-  <img id="hex">
-  <img id="error">
-  <iframe id="plot"></iframe>
+  <div class="card"><img id="hex"></div>
+  <div class="card"><img id="error"></div>
+  <div class="card"><iframe id="plot"></iframe></div>
 </div>
 
-<div id="modal" class="modal"></div>
+<!-- TABLA -->
+<div class="card" id="tabla"></div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content" id="modal_content"></div>
+</div>
 
 <script>
 
-let catalogo, map;
+let catalogo;
+let map;
+let markers = [];
 
+// 🔥 CARGAR JSON
 fetch("catalogo_final.json")
-.then(r => r.json())
-.then(data => {
-  catalogo = data;
-  init();
-});
+  .then(r => r.json())
+  .then(data => {
+    catalogo = data;
+    init();
+  });
 
-function init(){
+function init() {
 
-  map = L.map('map').setView([-35,-71],5);
+  map = L.map('map').setView([-35, -71], 5);
 
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png').addTo(map);
 
   const selImg = document.getElementById("imagen");
 
   catalogo.imagenes.forEach(img => {
 
     let marker = L.marker([img.lat, img.lon]).addTo(map);
+    marker.bindPopup(img.nombre);
 
-    marker.on("click", ()=>{
+    markers[img.id] = marker;
+
+    marker.on("click", () => {
       selImg.value = img.id;
       cargarBandas();
       update();
+      map.setView([img.lat, img.lon], 12);
     });
 
     let o = document.createElement("option");
@@ -175,16 +211,17 @@ function init(){
     selImg.appendChild(o);
   });
 
-  function cargarBandas(){
-    let img = getImg();
-    let tipo = document.getElementById("tipo").value;
+  function cargarBandas() {
+    const id = selImg.value;
+    const tipo = document.getElementById("tipo").value;
 
-    let bandas = Object.keys(img[tipo].bandas);
+    const img = catalogo.imagenes.find(i => i.id == id);
+    const bandas = Object.keys(img[tipo].bandas);
 
-    let sel = document.getElementById("banda");
+    const sel = document.getElementById("banda");
     sel.innerHTML = "";
 
-    bandas.forEach(b=>{
+    bandas.forEach(b => {
       let o = document.createElement("option");
       o.value = b;
       o.text = b;
@@ -192,91 +229,94 @@ function init(){
     });
   }
 
-  function getImg(){
-    let id = document.getElementById("imagen").value;
-    return catalogo.imagenes.find(i=>i.id==id);
+  function cargarTabla(url, banda) {
+    fetch(url)
+      .then(r => r.text())
+      .then(text => {
+        let rows = text.split("\n").map(r => r.split(","));
+
+        let html = "<table>";
+
+        rows.forEach((row, i) => {
+          if (i === 0 || row[0] === banda) {
+            html += "<tr>";
+            row.forEach(cell => {
+              html += i === 0 ? "<th>"+cell+"</th>" : "<td>"+cell+"</td>";
+            });
+            html += "</tr>";
+          }
+        });
+
+        html += "</table>";
+        document.getElementById("tabla").innerHTML = html;
+      });
   }
 
   function actualizarStats(){
-
     let tipo = document.getElementById("tipo").value;
     let stat = document.getElementById("stat_type").value;
 
-    let base = "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/";
-
-    let folder = tipo === "S2"
-      ? "Analisis_General_Imagenes_S2DR3vsS2"
-      : "Analisis_General_Imagenes_S2DR3vsPS";
-
-    let file;
-
-    if (tipo === "S2") {
-      if (stat === "umbral") {
-        file = "Violinplot_Porcentaje_dentro_umbral.png";
-      } else {
-        file = `Violinplot_Pixeles_${stat}.png`;
-      }
-    } else {
-      if (stat === "umbral") {
-        file = "Violinplot_Pixeles_dentro_umbral_percent.png";
-      } else {
-        file = `Violinplot_Pixeles_${stat}.png`;
-      }
-    }
-
-    document.getElementById("stats_img").src =
-      base + folder + "/" + file;
+    let url = catalogo.analisis_global[tipo].violin[stat];
+    document.getElementById("stats_img").src = url;
   }
 
-  function update(){
+  function update() {
 
-    let img = getImg();
-    let tipo = document.getElementById("tipo").value;
-    let banda = document.getElementById("banda").value;
+    const id = selImg.value;
+    const tipo = document.getElementById("tipo").value;
+    const banda = document.getElementById("banda").value;
 
-    map.setView([img.lat,img.lon],12);
+    const img = catalogo.imagenes.find(i => i.id == id);
 
     document.getElementById("ref").src = img.ref;
 
-    let datos = img[tipo].bandas[banda] || {};
+    map.setView([img.lat, img.lon], 12);
+
+    const datos = img[tipo].bandas[banda] || {};
 
     document.getElementById("hex").src = datos.hex || "";
     document.getElementById("error").src = datos.error || "";
 
-    // 🔥 FIX 3D REAL
-    const iframe = document.getElementById("plot");
-    iframe.style.display = "none";
+    let iframe = document.getElementById("plot");
     iframe.src = datos["3d"] || "";
 
     iframe.onload = () => {
-      iframe.style.display = "block";
       try {
-        iframe.contentWindow.scrollTo(0,0);
+        iframe.contentWindow.scrollTo(0, 0);
       } catch(e){}
     };
 
+    cargarTabla(img[tipo].excel, banda);
     actualizarStats();
   }
 
   // EVENTOS
-  document.getElementById("imagen").onchange = ()=>{cargarBandas();update();}
-  document.getElementById("tipo").onchange = ()=>{cargarBandas();update();}
+  selImg.onchange = () => { cargarBandas(); update(); };
+  document.getElementById("tipo").onchange = () => { cargarBandas(); update(); };
   document.getElementById("banda").onchange = update;
   document.getElementById("stat_type").onchange = actualizarStats;
 
-  // MODAL CLARO
-  document.querySelectorAll("img, iframe").forEach(el=>{
-    el.onclick = ()=>{
+  // MODAL
+  document.querySelectorAll("img, iframe").forEach(el => {
+    el.onclick = () => {
       let modal = document.getElementById("modal");
-      modal.style.display = "block";
-      modal.innerHTML = el.outerHTML;
+      let content = document.getElementById("modal_content");
+
+      if(el.tagName === "IMG"){
+        content.innerHTML = `<img src="${el.src}">`;
+      } else {
+        content.innerHTML = `<iframe src="${el.src}"></iframe>`;
+      }
+
+      modal.style.display = "flex";
     };
   });
 
-  document.getElementById("modal").onclick = ()=>{
+  document.getElementById("modal").onclick = () => {
     document.getElementById("modal").style.display = "none";
   };
 
+  // INIT
   cargarBandas();
   update();
 }
