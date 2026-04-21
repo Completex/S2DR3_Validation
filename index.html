@@ -22,29 +22,26 @@ body {
   align-items: center;
 }
 
-select {
-  padding: 5px;
-  border-radius: 6px;
-}
-
-/* GRID SUPERIOR */
+/* 🔥 NUEVO LAYOUT */
 .top {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-columns: 0.6fr 1fr 1.4fr;
   gap: 10px;
   padding: 10px;
 }
 
-/* CARDS */
 .card {
   background: #f9fafb;
   border-radius: 12px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* MAPA */
 #map {
-  height: 300px;
+  height: 260px;
 }
 
 /* IMAGEN REF */
@@ -53,13 +50,19 @@ select {
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
+
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
-/* STATS */
+/* RESULTADOS */
 #stats_img {
   width: 100%;
-  height: 260px;
+  height: 320px;
   object-fit: contain;
+
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
 /* GRAFICOS */
@@ -75,6 +78,13 @@ select {
   height: 250px;
   border-radius: 10px;
   cursor: pointer;
+
+  opacity: 1;
+  transition: opacity 0.4s ease, transform 0.25s ease;
+}
+
+.graficos img:hover {
+  transform: scale(1.02);
 }
 
 /* TABLA */
@@ -82,16 +92,6 @@ select {
   margin: 10px;
   max-height: 300px;
   overflow-y: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-td, th {
-  border: 1px solid #ddd;
-  padding: 5px;
 }
 
 /* MODAL CLARO */
@@ -114,6 +114,11 @@ td, th {
 .modal img, .modal iframe {
   width: 100%;
   height: 100%;
+}
+
+/* 🔥 ANIMACION FADE */
+.fade-out {
+  opacity: 0 !important;
 }
 </style>
 </head>
@@ -161,7 +166,6 @@ td, th {
   <div class="card"><iframe id="plot"></iframe></div>
 </div>
 
-<!-- TABLA -->
 <div class="card" id="tabla"></div>
 
 <!-- MODAL -->
@@ -175,6 +179,16 @@ let catalogo;
 let map;
 let markers = [];
 
+// 🔥 FUNCION ANIMACION
+function fadeUpdate(element, newSrc){
+  element.classList.add("fade-out");
+
+  setTimeout(() => {
+    element.src = newSrc || "";
+    element.classList.remove("fade-out");
+  }, 200);
+}
+
 // 🔥 CARGAR JSON
 fetch("catalogo_final.json")
   .then(r => r.json())
@@ -183,7 +197,7 @@ fetch("catalogo_final.json")
     init();
   });
 
-function init() {
+function init(){
 
   map = L.map('map').setView([-35, -71], 5);
 
@@ -194,7 +208,6 @@ function init() {
   catalogo.imagenes.forEach(img => {
 
     let marker = L.marker([img.lat, img.lon]).addTo(map);
-    marker.bindPopup(img.nombre);
 
     markers[img.id] = marker;
 
@@ -202,7 +215,7 @@ function init() {
       selImg.value = img.id;
       cargarBandas();
       update();
-      map.setView([img.lat, img.lon], 12);
+      map.flyTo([img.lat, img.lon], 12); // 🔥 animación suave
     });
 
     let o = document.createElement("option");
@@ -211,7 +224,7 @@ function init() {
     selImg.appendChild(o);
   });
 
-  function cargarBandas() {
+  function cargarBandas(){
     const id = selImg.value;
     const tipo = document.getElementById("tipo").value;
 
@@ -229,7 +242,7 @@ function init() {
     });
   }
 
-  function cargarTabla(url, banda) {
+  function cargarTabla(url, banda){
     fetch(url)
       .then(r => r.text())
       .then(text => {
@@ -238,7 +251,7 @@ function init() {
         let html = "<table>";
 
         rows.forEach((row, i) => {
-          if (i === 0 || row[0] === banda) {
+          if (i === 0 || row[0] === banda){
             html += "<tr>";
             row.forEach(cell => {
               html += i === 0 ? "<th>"+cell+"</th>" : "<td>"+cell+"</td>";
@@ -257,10 +270,11 @@ function init() {
     let stat = document.getElementById("stat_type").value;
 
     let url = catalogo.analisis_global[tipo].violin[stat];
-    document.getElementById("stats_img").src = url;
+
+    fadeUpdate(document.getElementById("stats_img"), url);
   }
 
-  function update() {
+  function update(){
 
     const id = selImg.value;
     const tipo = document.getElementById("tipo").value;
@@ -268,21 +282,21 @@ function init() {
 
     const img = catalogo.imagenes.find(i => i.id == id);
 
-    document.getElementById("ref").src = img.ref;
+    fadeUpdate(document.getElementById("ref"), img.ref);
 
-    map.setView([img.lat, img.lon], 12);
+    map.flyTo([img.lat, img.lon], 12); // 🔥 animación suave
 
     const datos = img[tipo].bandas[banda] || {};
 
-    document.getElementById("hex").src = datos.hex || "";
-    document.getElementById("error").src = datos.error || "";
+    fadeUpdate(document.getElementById("hex"), datos.hex);
+    fadeUpdate(document.getElementById("error"), datos.error);
 
     let iframe = document.getElementById("plot");
     iframe.src = datos["3d"] || "";
 
     iframe.onload = () => {
       try {
-        iframe.contentWindow.scrollTo(0, 0);
+        iframe.contentWindow.scrollTo(0,0);
       } catch(e){}
     };
 
