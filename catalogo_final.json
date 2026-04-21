@@ -1542,19 +1542,19 @@
   "analisis_global": {
     "S2": {
       "violin": {
-        "R": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_Pixeles_R.png",
-        "R2": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_Pixeles_R2.png",
-        "RMSE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_Pixeles_RMSE.png",
-        "MAE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_Pixeles_MAE.png",
+        "R": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_R.png",
+        "R2": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_R2.png",
+        "RMSE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_RMSE.png",
+        "MAE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_MAE.png",
         "umbral": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_Porcentaje_dentro_umbral.png"
       }
     },
     "PS": {
       "violin": {
-        "R": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_Pixeles_R.png",
-        "R2": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_Pixeles_R2.png",
-        "RMSE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_Pixeles_RMSE.png",
-        "MAE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_Pixeles_MAE.png",
+        "R": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_R.png",
+        "R2": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_R2.png",
+        "RMSE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_RMSE.png",
+        "MAE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_MAE.png",
         "umbral": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_Pixeles_dentro_umbral_percent.png"
       }
     }
