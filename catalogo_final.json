@@ -63,11 +63,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -135,11 +150,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_2/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -207,11 +237,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_3/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -279,11 +324,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_4/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -351,11 +411,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_5/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -423,11 +498,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_6/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -495,11 +585,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_7/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -567,11 +672,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_8/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -639,11 +759,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_9/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -777,11 +912,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_11/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -849,11 +999,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_12/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -921,11 +1086,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_13/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -986,11 +1166,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_14/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -1058,11 +1253,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_15/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -1130,11 +1340,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_16/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -1202,11 +1427,26 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_17/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
@@ -1274,14 +1514,49 @@
       },
       "PS": {
         "bandas": {
-          "Blue": {},
-          "Green": {},
-          "NIR": {},
-          "Red": {},
-          "RedEdge": {}
+          "Blue": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Blue.png"
+          },
+          "Green": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Green.png"
+          },
+          "NIR": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_NIR.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_NIR.png"
+          },
+          "Red": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          },
+          "RedEdge": {
+            "error": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_RedEdge.png",
+            "hex": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_RedEdge.png"
+          }
         },
         "excel": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Resumen_Metricas_Radiometricas_S2DR3_vs_PlanetScope.csv"
       }
     }
-  ]
+  ],
+  "analisis_global": {
+    "S2": {
+      "violin": {
+        "R": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_Pixeles_R.png",
+        "R2": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_Pixeles_R2.png",
+        "RMSE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_Pixeles_RMSE.png",
+        "MAE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_Pixeles_MAE.png",
+        "umbral": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_Porcentaje_dentro_umbral.png"
+      }
+    },
+    "PS": {
+      "violin": {
+        "R": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_Pixeles_R.png",
+        "R2": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_Pixeles_R2.png",
+        "RMSE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_Pixeles_RMSE.png",
+        "MAE": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_Pixeles_MAE.png",
+        "umbral": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsPS/Violinplot_Pixeles_dentro_umbral_percent.png"
+      }
+    }
+  }
 }
