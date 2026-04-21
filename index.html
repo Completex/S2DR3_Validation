@@ -14,7 +14,6 @@ body {
   color: #111;
 }
 
-/* HEADER */
 .header {
   padding: 15px;
   background: #e5e7eb;
@@ -23,7 +22,6 @@ body {
   align-items: center;
 }
 
-/* GRID SUPERIOR */
 .top {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
@@ -31,29 +29,23 @@ body {
   padding: 10px;
 }
 
-/* CARDS */
 .card {
   background: #f3f4f6;
   border-radius: 12px;
   padding: 10px;
 }
 
-/* MAPA */
-#map {
-  height: 300px;
-}
+#map { height: 300px; }
 
-/* REF */
 #ref {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
 
-/* STATS */
 #stats_img {
   width: 100%;
-  height: 260px;
+  height: 240px;
   object-fit: contain;
 }
 
@@ -71,17 +63,22 @@ body {
   cursor: pointer;
 }
 
-/* MODAL */
+iframe {
+  border: none;
+  overflow: hidden;
+}
+
+/* MODAL CLARO */
 .modal {
   display: none;
   position: fixed;
   z-index: 999;
-  padding-top: 50px;
+  padding-top: 40px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(255,255,255,0.95);
 }
 
 .modal img, .modal iframe {
@@ -89,10 +86,7 @@ body {
   display: block;
   width: 80%;
   height: 80%;
-}
-
-.modal:hover {
-  cursor: zoom-out;
+  background: white;
 }
 </style>
 </head>
@@ -123,13 +117,16 @@ body {
   </div>
 
   <div class="card">
+    <h4>Resultados Generales</h4>
+
     <select id="stat_type">
-      <option value="MAE">MAE</option>
       <option value="R">R</option>
       <option value="R2">R2</option>
       <option value="RMSE">RMSE</option>
+      <option value="MAE">MAE</option>
       <option value="umbral">Umbral</option>
     </select>
+
     <img id="stats_img">
   </div>
 
@@ -200,6 +197,37 @@ function init(){
     return catalogo.imagenes.find(i=>i.id==id);
   }
 
+  function actualizarStats(){
+
+    let tipo = document.getElementById("tipo").value;
+    let stat = document.getElementById("stat_type").value;
+
+    let base = "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/";
+
+    let folder = tipo === "S2"
+      ? "Analisis_General_Imagenes_S2DR3vsS2"
+      : "Analisis_General_Imagenes_S2DR3vsPS";
+
+    let file;
+
+    if (tipo === "S2") {
+      if (stat === "umbral") {
+        file = "Violinplot_Porcentaje_dentro_umbral.png";
+      } else {
+        file = `Violinplot_Pixeles_${stat}.png`;
+      }
+    } else {
+      if (stat === "umbral") {
+        file = "Violinplot_Pixeles_dentro_umbral_percent.png";
+      } else {
+        file = `Violinplot_Pixeles_${stat}.png`;
+      }
+    }
+
+    document.getElementById("stats_img").src =
+      base + folder + "/" + file;
+  }
+
   function update(){
 
     let img = getImg();
@@ -215,33 +243,19 @@ function init(){
     document.getElementById("hex").src = datos.hex || "";
     document.getElementById("error").src = datos.error || "";
 
-    // FIX 3D REAL
-    let iframe = document.getElementById("plot");
-    iframe.src = "";
-    setTimeout(()=>{
-      iframe.src = datos["3d"] || "";
-    },100);
+    // 🔥 FIX 3D REAL
+    const iframe = document.getElementById("plot");
+    iframe.style.display = "none";
+    iframe.src = datos["3d"] || "";
+
+    iframe.onload = () => {
+      iframe.style.display = "block";
+      try {
+        iframe.contentWindow.scrollTo(0,0);
+      } catch(e){}
+    };
 
     actualizarStats();
-  }
-
-  function actualizarStats(){
-
-    let tipo = document.getElementById("tipo").value;
-    let stat = document.getElementById("stat_type").value;
-
-    let base = "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/";
-
-    let folder = tipo === "S2"
-      ? "Analisis_General_Imagenes_S2DR3vsS2"
-      : "Analisis_General_Imagenes_S2DR3vsPS";
-
-    let file = tipo === "S2"
-      ? `Violinplot_Pixeles_${stat}.png`
-      : `Barplot_${stat}.png`;
-
-    document.getElementById("stats_img").src =
-      base + folder + "/" + file;
   }
 
   // EVENTOS
@@ -250,7 +264,7 @@ function init(){
   document.getElementById("banda").onchange = update;
   document.getElementById("stat_type").onchange = actualizarStats;
 
-  // MODAL (expandir)
+  // MODAL CLARO
   document.querySelectorAll("img, iframe").forEach(el=>{
     el.onclick = ()=>{
       let modal = document.getElementById("modal");
