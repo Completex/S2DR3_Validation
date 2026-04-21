@@ -10,10 +10,11 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #ffffff;
-  color: #111827;
+  background: white;
+  color: #111;
 }
 
+/* HEADER */
 .header {
   padding: 15px;
   background: #e5e7eb;
@@ -22,16 +23,10 @@ body {
   align-items: center;
 }
 
-select {
-  padding: 5px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* GRID */
-.container {
+/* GRID SUPERIOR */
+.top {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr;
   gap: 10px;
   padding: 10px;
 }
@@ -41,7 +36,6 @@ select {
   background: #f3f4f6;
   border-radius: 12px;
   padding: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
 /* MAPA */
@@ -49,18 +43,24 @@ select {
   height: 300px;
 }
 
-/* IMAGEN REF */
+/* REF */
 #ref {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-radius: 10px;
+}
+
+/* STATS */
+#stats_img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
 }
 
 /* GRAFICOS */
 .graficos {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 10px;
 }
@@ -68,28 +68,31 @@ select {
 .graficos img, iframe {
   width: 100%;
   height: 250px;
-  border-radius: 10px;
+  cursor: pointer;
 }
 
-iframe {
-  border: none;
-}
-
-/* TABLA */
-#tabla {
-  margin: 10px;
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-table {
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
   width: 100%;
-  border-collapse: collapse;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
 }
 
-td, th {
-  border: 1px solid #d1d5db;
-  padding: 5px;
+.modal img, .modal iframe {
+  margin: auto;
+  display: block;
+  width: 80%;
+  height: 80%;
+}
+
+.modal:hover {
+  cursor: zoom-out;
 }
 </style>
 </head>
@@ -97,7 +100,7 @@ td, th {
 <body>
 
 <div class="header">
-  <h3>🌎 Visor S2DR3</h3>
+  <h3>Interfaz de resultados</h3>
 
   <select id="imagen"></select>
 
@@ -109,7 +112,8 @@ td, th {
   <select id="banda"></select>
 </div>
 
-<div class="container">
+<div class="top">
+
   <div class="card">
     <div id="map"></div>
   </div>
@@ -117,33 +121,42 @@ td, th {
   <div class="card">
     <img id="ref">
   </div>
+
+  <div class="card">
+    <select id="stat_type">
+      <option value="MAE">MAE</option>
+      <option value="R">R</option>
+      <option value="R2">R2</option>
+      <option value="RMSE">RMSE</option>
+      <option value="umbral">Umbral</option>
+    </select>
+    <img id="stats_img">
+  </div>
+
 </div>
 
 <div class="graficos">
-  <div class="card"><img id="hex"></div>
-  <div class="card"><img id="error"></div>
-  <div class="card"><iframe id="plot"></iframe></div>
+  <img id="hex">
+  <img id="error">
+  <iframe id="plot"></iframe>
 </div>
 
-<div class="card" id="tabla"></div>
+<div id="modal" class="modal"></div>
 
 <script>
 
-let catalogo;
-let map;
+let catalogo, map;
 
-// 🔥 CARGAR JSON
 fetch("catalogo_final.json")
-  .then(r => r.json())
-  .then(data => {
-    catalogo = data;
-    init();
-  });
+.then(r => r.json())
+.then(data => {
+  catalogo = data;
+  init();
+});
 
-// 🔥 INICIALIZAR TODO
-function init() {
+function init(){
 
-  map = L.map('map').setView([-35, -71], 5);
+  map = L.map('map').setView([-35,-71],5);
 
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
@@ -152,13 +165,11 @@ function init() {
   catalogo.imagenes.forEach(img => {
 
     let marker = L.marker([img.lat, img.lon]).addTo(map);
-    marker.bindPopup(img.nombre);
 
-    marker.on("click", () => {
+    marker.on("click", ()=>{
       selImg.value = img.id;
       cargarBandas();
       update();
-      map.setView([img.lat, img.lon], 12);
     });
 
     let o = document.createElement("option");
@@ -167,17 +178,16 @@ function init() {
     selImg.appendChild(o);
   });
 
-  function cargarBandas() {
-    const id = selImg.value;
-    const tipo = document.getElementById("tipo").value;
+  function cargarBandas(){
+    let img = getImg();
+    let tipo = document.getElementById("tipo").value;
 
-    const img = catalogo.imagenes.find(i => i.id == id);
-    const bandas = Object.keys(img[tipo].bandas);
+    let bandas = Object.keys(img[tipo].bandas);
 
-    const sel = document.getElementById("banda");
+    let sel = document.getElementById("banda");
     sel.innerHTML = "";
 
-    bandas.forEach(b => {
+    bandas.forEach(b=>{
       let o = document.createElement("option");
       o.value = b;
       o.text = b;
@@ -185,63 +195,74 @@ function init() {
     });
   }
 
-  function cargarTabla(url, banda) {
-    fetch(url)
-      .then(r => r.text())
-      .then(text => {
-        let rows = text.split("\n").map(r => r.split(","));
-
-        let html = "<table>";
-
-        rows.forEach((row, i) => {
-          if (i === 0 || row[0] === banda) {
-            html += "<tr>";
-            row.forEach(cell => {
-              html += i === 0 ? "<th>"+cell+"</th>" : "<td>"+cell+"</td>";
-            });
-            html += "</tr>";
-          }
-        });
-
-        html += "</table>";
-
-        document.getElementById("tabla").innerHTML = html;
-      });
+  function getImg(){
+    let id = document.getElementById("imagen").value;
+    return catalogo.imagenes.find(i=>i.id==id);
   }
 
-  function update() {
-    const id = selImg.value;
-    const tipo = document.getElementById("tipo").value;
-    const banda = document.getElementById("banda").value;
+  function update(){
 
-    const img = catalogo.imagenes.find(i => i.id == id);
+    let img = getImg();
+    let tipo = document.getElementById("tipo").value;
+    let banda = document.getElementById("banda").value;
 
-    // 🔥 MOVER MAPA AUTOMATICAMENTE
-    map.setView([img.lat, img.lon], 12);
+    map.setView([img.lat,img.lon],12);
 
     document.getElementById("ref").src = img.ref;
 
-    const datos = img[tipo].bandas[banda] || {};
+    let datos = img[tipo].bandas[banda] || {};
 
     document.getElementById("hex").src = datos.hex || "";
     document.getElementById("error").src = datos.error || "";
 
-    // 🔥 FIX IFRAME 3D
-    const iframe = document.getElementById("plot");
+    // FIX 3D REAL
+    let iframe = document.getElementById("plot");
     iframe.src = "";
-    setTimeout(() => {
+    setTimeout(()=>{
       iframe.src = datos["3d"] || "";
-    }, 50);
+    },100);
 
-    cargarTabla(img[tipo].excel, banda);
+    actualizarStats();
+  }
+
+  function actualizarStats(){
+
+    let tipo = document.getElementById("tipo").value;
+    let stat = document.getElementById("stat_type").value;
+
+    let base = "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/";
+
+    let folder = tipo === "S2"
+      ? "Analisis_General_Imagenes_S2DR3vsS2"
+      : "Analisis_General_Imagenes_S2DR3vsPS";
+
+    let file = tipo === "S2"
+      ? `Violinplot_Pixeles_${stat}.png`
+      : `Barplot_${stat}.png`;
+
+    document.getElementById("stats_img").src =
+      base + folder + "/" + file;
   }
 
   // EVENTOS
-  selImg.onchange = () => { cargarBandas(); update(); };
-  document.getElementById("tipo").onchange = () => { cargarBandas(); update(); };
+  document.getElementById("imagen").onchange = ()=>{cargarBandas();update();}
+  document.getElementById("tipo").onchange = ()=>{cargarBandas();update();}
   document.getElementById("banda").onchange = update;
+  document.getElementById("stat_type").onchange = actualizarStats;
 
-  // INIT
+  // MODAL (expandir)
+  document.querySelectorAll("img, iframe").forEach(el=>{
+    el.onclick = ()=>{
+      let modal = document.getElementById("modal");
+      modal.style.display = "block";
+      modal.innerHTML = el.outerHTML;
+    };
+  });
+
+  document.getElementById("modal").onclick = ()=>{
+    document.getElementById("modal").style.display = "none";
+  };
+
   cargarBandas();
   update();
 }
