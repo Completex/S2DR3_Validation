@@ -187,30 +187,40 @@
     }
 
     function fillBandSelect() {
-      const scene = catalogo[Number(selImg.value)] || catalogo[0];
-      const bandKeys = Object.keys(scene.bands || {});
-      selBanda.innerHTML = "";
-      bandKeys.forEach(band => {
-        const option = document.createElement("option");
-        option.value = band;
-        option.textContent = band;
-        selBanda.appendChild(option);
-      });
+  const scene = currentScene();
+  const type = selTipo.value;
+
+  selBanda.innerHTML = "";
+
+  const bandKeys = Object.keys(scene.bands || {});
+
+  bandKeys.forEach(band => {
+    const bandData = scene.bands[band];
+
+    if (bandData.comparisons && bandData.comparisons[type]) {
+      const option = document.createElement("option");
+      option.value = band;
+      option.textContent = band.replaceAll("_", " ");
+      selBanda.appendChild(option);
     }
+  });
+}
 
     function currentScene() {
       return catalogo[Number(selImg.value)] || catalogo[0];
     }
 
     function currentPayload() {
-      const scene = currentScene();
-      const band = selBanda.value;
-      const type = selTipo.value;
-      const metric = selStat.value;
-      const bandData = scene?.bands?.[band];
-      const typeData = bandData?.[type];
-      return { scene, band, type, metric, bandData, typeData };
-    }
+  const scene = currentScene();
+  const band = selBanda.value;
+  const type = selTipo.value;
+  const metric = selStat.value;
+
+  const bandData = scene?.bands?.[band];
+  const typeData = bandData?.comparisons?.[type];
+
+  return { scene, band, type, metric, bandData, typeData };
+}
 
     function updateMap(scene) {
       const lat = scene.lat;
@@ -273,10 +283,10 @@
       document.getElementById("meta_metric").textContent = metric;
 
       fadeUpdate(refImg, scene.reference);
-      fadeUpdate(statsImg, typeData.stats?.[metric] || "");
-      fadeUpdate(hexImg, typeData.hex || "");
-      fadeUpdate(errorImg, typeData.error || "");
-      fadeUpdate(plotFrame, typeData.plot || "about:blank");
+      fadeUpdate(statsImg, typeData.metrics?.[metric] || "");
+      fadeUpdate(hexImg, typeData.hexbin || "");
+      fadeUpdate(errorImg, typeData.error_map || "");
+      fadeUpdate(plotFrame, typeData.plot_3d || "about:blank");
 
       updateMap(scene);
       updateTable(scene, band, type, metric);
@@ -332,7 +342,10 @@
         fillBandSelect();
         updateUI();
       });
-      selTipo.addEventListener("change", updateUI);
+      selTipo.addEventListener("change", () => {
+        fillBandSelect();
+        updateUI();
+      });
       selBanda.addEventListener("change", updateUI);
       selStat.addEventListener("change", updateUI);
     }
