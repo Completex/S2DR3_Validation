@@ -309,14 +309,7 @@
         document.body.classList.add("modal-open");
       }
 
-      // Hacer las imágenes mismas clickeables para ampliar
-      refImg.addEventListener("click", () => openImage("Imagen de referencia", refImg.src, "Imagen de referencia"));
-      statsImg.addEventListener("click", () => openImage("Resultados generales", statsImg.src, "Resultados generales"));
-      hexImg.addEventListener("click", () => openImage("Hexbin", hexImg.src, "Hexbin"));
-      errorImg.addEventListener("click", () => openImage("Error", errorImg.src, "Error"));
-      plotFrame.addEventListener("click", () => openFrame("Plot interactivo", plotFrame.src));
-
-      // Botones de ampliar (con protección por si no existen)
+      // CAMBIO 1: Proteger contra elementos que no existen
       const openRefBtn = document.getElementById("open_ref");
       const openStatsBtn = document.getElementById("open_stats");
       const openHexBtn = document.getElementById("open_hex");
@@ -329,14 +322,19 @@
       if (openErrorBtn) openErrorBtn.addEventListener("click", () => openImage("Error", errorImg.src, "Error"));
       if (openPlotBtn) openPlotBtn.addEventListener("click", () => openFrame("Plot interactivo", plotFrame.src));
 
-      // Cierre del modal
-      const closeModalBtn = document.getElementById("close_modal");
-      if (closeModalBtn) closeModalBtn.addEventListener("click", closeModal);
+      refImg.addEventListener("click", () => openImage("Imagen de referencia", refImg.src, "Imagen de referencia"));
+      statsImg.addEventListener("click", () => openImage("Resultados generales", statsImg.src, "Resultados generales"));
+      hexImg.addEventListener("click", () => openImage("Hexbin", hexImg.src, "Hexbin"));
+      errorImg.addEventListener("click", () => openImage("Error", errorImg.src, "Error"));
+      plotFrame.addEventListener("click", () => openFrame("Plot interactivo", plotFrame.src));
+
+      // CAMBIO 2: Proteger botón de cierre contra null
+      const closeBtn = document.getElementById("close_modal");
+      if (closeBtn) closeBtn.addEventListener("click", closeModal);
       
       modal.addEventListener("click", (e) => {
         if (e.target === modal) closeModal();
       });
-      
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeModal();
       });
