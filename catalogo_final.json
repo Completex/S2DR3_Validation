@@ -5,12 +5,10 @@
     "lat": 0,
     "lon": 0,
     "reference": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Imagen_referencia.png",
-    "B02": {
-
+     "bands": {
+      "B02": {
         "comparisons": {
-
           "S2": {
-
             "metrics": {
             "R": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_R.png",
             "R2": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_R2.png",
@@ -34,11 +32,11 @@
           "error_map": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_18/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Blue.png",
           "plot_3d": ""
         }
+       }   
       },
 
       "B03": {
          "comparisons": {
-
           "S2": {
           "metrics": {
             "R": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_R.png",
@@ -63,11 +61,11 @@
           "error_map": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Green.png",
           "plot_3d": ""
         }
+       }    
       },
 
       "B04": {
         "comparisons": {
-
           "S2": {
           "metrics": {
             "R": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Analisis_General_Imagenes_S2DR3vsS2/Violinplot_R.png",
@@ -91,9 +89,8 @@
           "hexbin": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Densidad_Hex_S2DR3_vs_Planet_Red.png",
           "error_map": "https://storage.googleapis.com/tesis_s2dr3/Archivos_Subida/Imagen_1/Resultado_analisis_PSvsS2DR3/Banda_error_PS_vs_S2DR3_Red.png",
           "plot_3d": ""
-       }
+          }
         }
       }
     }
-  }
 ]
